@@ -1,11 +1,16 @@
 #include<iostream>
 #include<list>
+#include<iomanip>
 #include<string>
+#include <utility>
 #include<vector>
+#include<fstream>
+#include<stdlib.h>
 
 using namespace std;
-enum class EstadoActa{cerrada=0, abierta};
-enum class tipoTrabajo{aplicado=0, investigacion};
+
+enum class EstadoActa{cerrada=0, abierta=1};
+enum class tipoTrabajo{aplicado=0, investigacion=1};
 enum tipoPersona{ESTUDIANTE=0,JURADO=1,DIRECTOR=2};
 
 class Acta{
@@ -14,6 +19,8 @@ private:
     string fecha, nombreTrabajo;
     tipoTrabajo tipo_Trabajo;
     EstadoActa estado;
+    vector<int>criterio1;
+    vector<int>criterio2;
 public:
     Acta();//fecha, el número del acta,
     //nombre del estudiante, nombre del trabajo, tipo de trabajo, director, codirector (si existe), jurado 1 y jurado 2
@@ -23,6 +30,10 @@ public:
     void agregarEstudiante();
     void agregarJurado();
     void agregarDirector();
+    void mostrarCriterios();
+    void recibirCriterios(vector<int>, vector<int>);
+    void Criterios();
+
 };
 class Persona{
     private:
@@ -35,15 +46,17 @@ class Persona{
         Persona(string, int);
         void mostrarPersona();
 };
-class Director: public Persona{
-    private:
-        vector <string> vectorNombreDirector;
-        vector <int> vectorIdDirector;
-    public:
-        Director();
-        Director(string, int);
+class Estudiante: public Persona{
+private:
+    vector <string> vectorNombreEstudiante;
+    vector <int> vectorIdEstudiante;
+public:
+    Estudiante();
+    Estudiante(string,int);
+    void setEstudiante(string,int);
+    void crearProyecto();
+    void mostrarEstudiante();
 };
-
 class Jurado: public Persona{
     private:
         vector <string> vectorNombreJurado;
@@ -53,25 +66,25 @@ class Jurado: public Persona{
         Jurado(string, int);
         void setJurado();
         void calificarActa();
+
+    void calificarCriterios();
 };
-class Estudiante: public Persona{
-    private:
-        vector <string> vectorNombreEstudiante;
-        vector <int> vectorIdEstudiante;
-    public:
-        Estudiante();
-        Estudiante(string,int);
-        void setEstudiante(string,int);
-        void crearProyecto();
-        void mostrarEstudiante();
+class Director: public Persona{
+private:
+    vector <string> vectorNombreDirector;
+    vector <int> vectorIdDirector;
+public:
+    Director();
+    Director(string, int);
 };
+
 Persona::Persona(string nombre, int id) {
     this->vectorNombrePersona.push_back(nombre);
     this->vectorIdPersona.push_back(id);
 }
 void Persona::mostrarPersona() {
     int i;
-    for(i=0;i< vectorIdPersona.size();i++) {
+    for(i=0;i< this->vectorIdPersona.size();i++) {
         cout << "El nombre es: " << this->nombre << endl;
         cout << "El codigo es: " << this->id << endl;
     }
@@ -111,6 +124,8 @@ void Acta::crearNuevaActa(){
     printf("Ingrese el A%co: ",164);
     cin>>year;
     agregarPersonal();
+    Jurado jurado;
+    jurado.calificarActa();
     this->estado = EstadoActa::abierta;
     cout<<"Acta #"<<this->numeroActa<< " creada ";
 
@@ -150,7 +165,6 @@ void Acta::agregarPersonal(){
                 }break;
         }
     }while(addDir<1 || addJur<2 || addEst<1);
-
 }
 
 void Acta::agregarEstudiante() {
@@ -188,20 +202,92 @@ void Acta::agregarDirector() {
     cin>>code;
     Director director(name,code);
     Persona persona(name,code);
+}
 
+void Acta::recibirCriterios(vector<int> vectorCriterioJ1, vector<int> vectorCriterioJ2) {
+    this->criterio1= move(vectorCriterioJ1);
+    this->criterio2= move(vectorCriterioJ2);
+    for (int i=0;i<criterio1.size();i++){
+        cout << criterio1[i] << endl << criterio2[i]<<endl;
+
+    }
+}
+
+
+
+void Jurado::calificarCriterios() {
+    int i, nota, n=0;
+    vector<int> vectorCriterioJ1, vectorCriterioJ2;
+    for (i=0;i<16;i++){
+        cin.ignore();
+        cout<<"Ingrese la nota del criterio "<<i+1<<": ";
+        cin>>nota;
+        if(n<8){
+            vectorCriterioJ1.push_back(nota);
+        }else{
+            vectorCriterioJ2.push_back(nota);
+        }
+        n++;
+    }
+    Acta mandarCriterios;
+    mandarCriterios.recibirCriterios(vectorCriterioJ1, vectorCriterioJ2);
+}
+void Jurado::calificarActa() {
+    calificarCriterios();
+}
+Jurado::Jurado() {
 
 }
 
+/*void escribir(){
+    ofstream archivo;
+    string nombreArchivo, mensaje;
+
+    cout<<"Ingrese el nombre del archivo: "<<endl;
+    getline(cin, nombreArchivo);
+    archivo.open(nombreArchivo.c_str(), ios::out);
+
+    if(archivo.fail()){
+        cout<<"No se pudo abrir el archivo  :("<<endl;
+        exit(1);
+    }
+
+    cout<<"Ingrese el mensaje del archivo: "<<endl;
+    getline(cin, mensaje);
+    archivo<<mensaje<< endl;
+
+
+
+    archivo.close();
+}
+void leer(){
+    ifstream archivoLectura;
+    string texto;
+    archivoLectura.open("ewfewf", ios::in);
+
+    if(archivoLectura.fail()){
+        cout<<"No se pudo abrir el archivo  :("<<endl;
+        exit(1);
+    }
+
+    while(!archivoLectura.eof()){  //mientras no se acabe el archivo
+        getline(archivoLectura, texto); //leer archivo
+        cout<<texto<<endl;
+
+    }
+
+    archivoLectura.close();
+}*/
 int main(){
-    int i;
+    //escribir();
+    //leer();
     vector<Acta> acta;
     Acta acta1;
     acta.push_back(acta1);
     acta1.crearNuevaActa();
+    cout<<"ya";
     system("pause");
-    Persona persona1;
-    persona1.mostrarPersona();
-
     return 0;
 }
+
 
