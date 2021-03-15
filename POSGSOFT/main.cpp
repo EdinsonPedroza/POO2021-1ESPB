@@ -19,8 +19,11 @@ private:
     string fecha, nombreTrabajo;
     tipoTrabajo tipo_Trabajo;
     EstadoActa estado;
-    vector<int>criterio1;
-    vector<int>criterio2;
+    vector<double>criterio1;
+    vector<double>criterio2;
+    vector<double>criterioFinal;
+    vector<double> promedio;
+    vector<double>ponderado;
 public:
     Acta();//fecha, el número del acta,
     //nombre del estudiante, nombre del trabajo, tipo de trabajo, director, codirector (si existe), jurado 1 y jurado 2
@@ -30,10 +33,10 @@ public:
     void agregarEstudiante();
     void agregarJurado();
     void agregarDirector();
-    void mostrarCriterios();
-    void recibirCriterios(vector<int>, vector<int>);
-    void Criterios();
-
+    void recibirCriterios(vector<double>, vector<double>);
+    void mostrarCalificacionesCriterios();
+    void crearPonderado();
+    void generarEstadoActa();
 };
 class Persona{
     private:
@@ -66,8 +69,7 @@ class Jurado: public Persona{
         Jurado(string, int);
         void setJurado();
         void calificarActa();
-
-    void calificarCriterios();
+        void calificarCriterios();
 };
 class Director: public Persona{
 private:
@@ -204,33 +206,75 @@ void Acta::agregarDirector() {
     Persona persona(name,code);
 }
 
-void Acta::recibirCriterios(vector<int> vectorCriterioJ1, vector<int> vectorCriterioJ2) {
-    this->criterio1= move(vectorCriterioJ1);
+void Acta::recibirCriterios(vector<double> vectorCriterioJ1, vector<double> vectorCriterioJ2) {
+    this->criterio1 = move(vectorCriterioJ1);
     this->criterio2= move(vectorCriterioJ2);
-    for (int i=0;i<criterio1.size();i++){
-        cout << criterio1[i] << endl << criterio2[i]<<endl;
+}
 
+void Acta::mostrarCalificacionesCriterios() {
+    for (int i = 0; i < this->criterio1.size(); i++){
+        cout <<"Nota "<<i+1<<" de Jurado 1: "<<this->criterio1[i] << endl <<"Nota "<<i+1<<" de Jurado 2: "<< this->criterio2[i]<< endl;
     }
 }
 
+void Acta::generarEstadoActa() {
+    cout<<"hola ";
+    for (int i = 0; i < this->criterio1.size(); i++) {
+        cout<<"hola ";
+        this->criterioFinal.push_back((this->criterio1[i]+this->criterio2[i])/2 * (this->ponderado[i]));
+        cout<<"hola ";
+    }
+    cout<<"hola ";
+    this->promedio.push_back((this->criterioFinal[0]+this->criterioFinal[1]+this->criterioFinal[2]+this->criterioFinal[3]+
+                               this->criterioFinal[4]+this->criterioFinal[5]+this->criterioFinal[6]+this->criterioFinal[0])/
+                               this->criterioFinal.size());
+    cout<<promedio[0];
+}
 
+void Acta::crearPonderado() {
+    int i=0;
+    switch (i) {
+        case 0:
+            this->ponderado.push_back(0.20);
+        case 1:
+            this->ponderado.push_back(0.15);
+        case 2:
+            this->ponderado.push_back(0.10);
+        case 3:
+            this->ponderado.push_back(0.10);
+        case 4:
+            this->ponderado.push_back(0.20);
+        case 5:
+            this->ponderado.push_back(0.10);
+        case 6:
+            this->ponderado.push_back(0.075);
+        case 7:
+            this->ponderado.push_back(0.075);
+    }
+    cout<< this->ponderado[7];
+}
 
 void Jurado::calificarCriterios() {
     int i, nota, n=0;
-    vector<int> vectorCriterioJ1, vectorCriterioJ2;
+    vector<double> vectorCriterioJ1, vectorCriterioJ2;
     for (i=0;i<16;i++){
         cin.ignore();
-        cout<<"Ingrese la nota del criterio "<<i+1<<": ";
-        cin>>nota;
         if(n<8){
+            cout<<"Jurado 1:";
+            cout<<"Ingrese la nota del criterio "<<i+1<<": ";
+            cin>>nota;
             vectorCriterioJ1.push_back(nota);
         }else{
+            cout<<"Jurado 2:";
+            cout<<"Ingrese la nota del criterio "<<i-7<<": ";
+            cin>>nota;
             vectorCriterioJ2.push_back(nota);
         }
         n++;
     }
     Acta mandarCriterios;
     mandarCriterios.recibirCriterios(vectorCriterioJ1, vectorCriterioJ2);
+    mandarCriterios.mostrarCalificacionesCriterios();
 }
 void Jurado::calificarActa() {
     calificarCriterios();
@@ -281,10 +325,18 @@ void leer(){
 int main(){
     //escribir();
     //leer();
-    vector<Acta> acta;
-    Acta acta1;
-    acta.push_back(acta1);
-    acta1.crearNuevaActa();
+    vector<int> a;
+    vector<int> b;
+    vector<int> c;
+    b.push_back(3);
+    c.push_back(3);
+    a.push_back((b[0]*c[0])/2);
+    cout<<a[0];
+    Acta acta;
+    acta.crearNuevaActa();
+    acta.crearPonderado();
+    acta.generarEstadoActa();
+
     cout<<"ya";
     system("pause");
     return 0;
