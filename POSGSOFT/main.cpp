@@ -12,31 +12,40 @@ using namespace std;
 enum class EstadoActa{cerrada=0, abierta=1};
 enum class tipoTrabajo{aplicado=0, investigacion=1};
 enum tipoPersona{ESTUDIANTE=0,JURADO=1,DIRECTOR=2};
+enum Estadotrabajo:char{REPROBADO=0,APROBADO=1};
 
 class Acta{
 private:
     int numeroActa;
     string fecha, nombreTrabajo;
-    tipoTrabajo tipo_Trabajo;
+    tipoTrabajo tipoTrabajo;
     EstadoActa estado;
+    Estadotrabajo estadotrabajo;
     vector<double>criterio1;
     vector<double>criterio2;
     vector<double>criterioFinal;
     vector<double> promedio;
     vector<double>ponderado;
+    vector<string>comentariosJ1;
+    vector<string>comentariosJ2;
+    string comentariosAdicionalesJ1;
+    string comentariosAdicionalesJ2;
 public:
-    Acta();//fecha, el número del acta,
-    //nombre del estudiante, nombre del trabajo, tipo de trabajo, director, codirector (si existe), jurado 1 y jurado 2
+    Acta();
     void crearFechaActa();
     void crearNuevaActa();
     void agregarPersonal();
     void agregarEstudiante();
     void agregarJurado();
     void agregarDirector();
-    void recibirCriterios(vector<double>, vector<double>);
+    void recibirCriterios(vector<double>, vector<double>, vector<string>, vector<string>);
     void mostrarCalificacionesCriterios();
     void crearPonderado();
     void generarEstadoActa();
+    void definirEstadoTrabajo();
+    void mostrarComentarios();
+    void recibirComentariosAdicionales(string, string);
+    void mostrarComentariosAdicionales();
 };
 class Persona{
     private:
@@ -68,8 +77,8 @@ class Jurado: public Persona{
         Jurado();
         Jurado(string, int);
         void setJurado();
-        void calificarActa();
         void calificarCriterios();
+        void ingresarComentariosAdicionales();
 };
 class Director: public Persona{
 private:
@@ -127,7 +136,7 @@ void Acta::crearNuevaActa(){
     cin>>year;
     agregarPersonal();
     Jurado jurado;
-    jurado.calificarActa();
+    jurado.calificarCriterios();
     this->estado = EstadoActa::abierta;
     cout<<"Acta #"<<this->numeroActa<< " creada ";
 
@@ -140,7 +149,7 @@ void Acta::agregarPersonal(){
         cout<<"Ingrese el tipo de persona a agregar: ";
         cin>>n;
         switch (n) {
-            case tipoPersona::ESTUDIANTE:
+            case tipoPersona::ESTUDIANTE :
                 if(addEst<1){
                     agregarEstudiante();
                     addEst+=1;
@@ -206,9 +215,13 @@ void Acta::agregarDirector() {
     Persona persona(name,code);
 }
 
-void Acta::recibirCriterios(vector<double> vectorCriterioJ1, vector<double> vectorCriterioJ2) {
-    this->criterio1 = move(vectorCriterioJ1);
-    this->criterio2= move(vectorCriterioJ2);
+void Acta::recibirCriterios(vector<double> vectorCriterioJ1, vector<double> vectorCriterioJ2, vector<string> vectorComentJ1,
+                            vector<string> vectorComentJ2){
+    this->criterio1=std::move(vectorCriterioJ1);
+    this->criterio2=std::move(vectorCriterioJ2);
+    this->comentariosJ1=std::move(vectorComentJ1);
+    this->comentariosJ2=std::move(vectorComentJ2);
+
 }
 
 void Acta::mostrarCalificacionesCriterios() {
@@ -217,18 +230,13 @@ void Acta::mostrarCalificacionesCriterios() {
     }
 }
 
-void Acta::generarEstadoActa() {
-    cout<<"hola ";
+void Acta::generarEstadoActa(){
     for (int i = 0; i < this->criterio1.size(); i++) {
-        cout<<"hola ";
-        this->criterioFinal.push_back((this->criterio1[i]+this->criterio2[i])/2 * (this->ponderado[i]));
-        cout<<"hola ";
+        this->criterioFinal.push_back(((this->criterio1[i]+this->criterio2[i])/2) * (this->ponderado[i]));
     }
-    cout<<"hola ";
     this->promedio.push_back((this->criterioFinal[0]+this->criterioFinal[1]+this->criterioFinal[2]+this->criterioFinal[3]+
-                               this->criterioFinal[4]+this->criterioFinal[5]+this->criterioFinal[6]+this->criterioFinal[0])/
-                               this->criterioFinal.size());
-    cout<<promedio[0];
+                               this->criterioFinal[4]+this->criterioFinal[5]+this->criterioFinal[6]+this->criterioFinal[7]));
+    cout<<this->promedio[0];
 }
 
 void Acta::crearPonderado() {
@@ -251,36 +259,123 @@ void Acta::crearPonderado() {
         case 7:
             this->ponderado.push_back(0.075);
     }
-    cout<< this->ponderado[7];
+}
+
+void Acta::definirEstadoTrabajo() {
+    if (this->promedio[0]>3.5){
+        this->estadotrabajo= APROBADO;
+    }else{
+        this->estadotrabajo= REPROBADO;
+    }
+
+}
+
+void Acta::mostrarComentariosAdicionales() {
+    cout<<this->comentariosAdicionalesJ1<<endl;
+    cout<<this->comentariosAdicionalesJ2<<endl;
+}
+
+void Acta::recibirComentariosAdicionales(string comentariosAdicionalesJ1, string comentariosAdicionalesJ2) {
+    this->comentariosAdicionalesJ1=std::move(comentariosAdicionalesJ1);
+    this->comentariosAdicionalesJ2=std::move(comentariosAdicionalesJ2);
+}
+
+void Acta::mostrarComentarios() {
+    int i;
+    for (i=0;i<this->comentariosJ1.size();i++){
+        if(i==0) {
+            cout << "Los comentarios del jurado 1 son:" << endl;
+        }
+        if(i>=0){
+            cout<<this->comentariosJ1[i]<<endl;
+        }
+    }
+    for (i=0;i<this->comentariosJ2.size();i++){
+        if(i==0) {
+            cout << "Los comentarios del jurado 2 son:" << endl;
+        }
+        if(i>=0){
+            cout<<this->comentariosJ2[i]<<endl;
+        }
+    }
 }
 
 void Jurado::calificarCriterios() {
-    int i, nota, n=0;
+    int i, nota;
     vector<double> vectorCriterioJ1, vectorCriterioJ2;
+    vector<string> vectorComentJ1, vectorComentJ2;
+    string comentJ1,comentJ2;
+
     for (i=0;i<16;i++){
-        cin.ignore();
-        if(n<8){
+        if(i<8){
             cout<<"Jurado 1:";
-            cout<<"Ingrese la nota del criterio "<<i+1<<": ";
+            cout<<"Ingrese la nota del criterio #"<<i+1<<": ";
             cin>>nota;
             vectorCriterioJ1.push_back(nota);
+            cin.ignore();
+            cout<<"Ingrese su comentario del criterio #"<<i+1<<":\n";
+            getline(cin, comentJ1);
+            vectorComentJ1.push_back(comentJ1);
+
         }else{
             cout<<"Jurado 2:";
-            cout<<"Ingrese la nota del criterio "<<i-7<<": ";
+            cout<<"Ingrese la nota del criterio #"<<i-7<<": ";
             cin>>nota;
             vectorCriterioJ2.push_back(nota);
+            cin.ignore();
+            cout<<"Ingrese su comentario del criterio # "<<i-7<<":\n";
+            getline(cin,comentJ2);
+            vectorComentJ2.push_back(comentJ2);
         }
-        n++;
     }
+
     Acta mandarCriterios;
-    mandarCriterios.recibirCriterios(vectorCriterioJ1, vectorCriterioJ2);
+    mandarCriterios.recibirCriterios(vectorCriterioJ1, vectorCriterioJ2, vectorComentJ1, vectorComentJ2);
     mandarCriterios.mostrarCalificacionesCriterios();
+    mandarCriterios.crearPonderado();
+    mandarCriterios.generarEstadoActa();
+    mandarCriterios.mostrarComentarios();
+    Jurado jurado;
+    jurado.ingresarComentariosAdicionales();
+
 }
-void Jurado::calificarActa() {
-    calificarCriterios();
-}
+
 Jurado::Jurado() {
 
+}
+void Jurado::ingresarComentariosAdicionales() {
+    int i=0, respuesta;
+    string comentarioJ1,comentarioJ2;
+    switch (i) {
+        case 0:
+            cout << "Jurado 1" << endl;
+            cout << "Desea realizar comentarios adicionales?" << endl;
+            cout << "0. No\n 1. Si" << endl;
+            cin >> respuesta;
+            if (respuesta == 1) {
+                cin.ignore();
+                cout << "Ingrese su comentario adicional:\n";
+                getline(cin, comentarioJ1);
+
+            } else {
+                cout<<"N/A"<<endl;
+            }
+        case 1:
+            cout << "Jurado 2" << endl;
+            cout << "Desea realizar comentarios adicionales?" << endl;
+            cout << "0. No\n 1. Si" << endl;
+            cin >> respuesta;
+            if (respuesta == 1) {
+                cin.ignore();
+                cout << "Ingrese su comentario adicional:\n";
+                getline(cin, comentarioJ2);
+            }else{
+                cout<<"N/A"<<endl;
+            }
+    }
+    Acta acta;
+    acta.recibirComentariosAdicionales(comentarioJ1,comentarioJ2);
+    acta.mostrarComentariosAdicionales();
 }
 
 /*void escribir(){
@@ -325,18 +420,9 @@ void leer(){
 int main(){
     //escribir();
     //leer();
-    vector<int> a;
-    vector<int> b;
-    vector<int> c;
-    b.push_back(3);
-    c.push_back(3);
-    a.push_back((b[0]*c[0])/2);
-    cout<<a[0];
+
     Acta acta;
     acta.crearNuevaActa();
-    acta.crearPonderado();
-    acta.generarEstadoActa();
-
     cout<<"ya";
     system("pause");
     return 0;
