@@ -1,5 +1,5 @@
 #include<iostream>
-#include "Acta.h"
+#include "Asistente.h"
 using namespace std;
 
 /*void escribir(){
@@ -42,10 +42,8 @@ void leer() {
 int main(){
     //escribir();
     //leer();
-    Acta acta;
-    acta.crearNuevaActa();
-    list<Acta> actas;
-    actas.push_back(acta);
+    Asistente asistente;
+    asistente.crearNuevaActa();
 
     cout<<"ya";
     system("pause");
