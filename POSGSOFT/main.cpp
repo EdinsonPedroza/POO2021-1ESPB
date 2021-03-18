@@ -1,19 +1,8 @@
 #include<iostream>
-#include<list>
-#include<iomanip>
-#include<string>
-#include <utility>
-#include<vector>
-#include<fstream>
-#include<stdlib.h>
-#include "Persona.h"
 #include "Acta.h"
-#include "Director.h"
-#include "Jurado.h"
-#include "Estudiante.h"
 using namespace std;
-/*
-void escribir(){
+
+/*void escribir(){
     ofstream archivo;
     string nombreArchivo, mensaje;
 
@@ -47,17 +36,17 @@ void leer() {
     while (!archivoLectura.eof()) {  //mientras no se acabe el archivo
         getline(archivoLectura, texto); //leer archivo
         cout << texto << endl;
-
     }
-
     archivoLectura.close();
-}
-*/
+}*/
 int main(){
     //escribir();
     //leer();
     Acta acta;
     acta.crearNuevaActa();
+    list<Acta> actas;
+    actas.push_back(acta);
+
     cout<<"ya";
     system("pause");
     return 0;

@@ -11,8 +11,9 @@
 using namespace std;
 class Persona{
 private:
+    string rol;
     string nombre;
-    int id, cantPersonas=0;
+    int id;
     vector <string> vectorNombrePersona;
     vector <int> vectorIdPersona;
 public:

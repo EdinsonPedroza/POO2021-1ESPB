@@ -141,6 +141,168 @@ POSGSOFT/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/build
 .PHONY : POSGSOFT/fast
 
+Acta.obj: Acta.cpp.obj
+
+.PHONY : Acta.obj
+
+# target to build an object file
+Acta.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Acta.cpp.obj
+.PHONY : Acta.cpp.obj
+
+Acta.i: Acta.cpp.i
+
+.PHONY : Acta.i
+
+# target to preprocess a source file
+Acta.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Acta.cpp.i
+.PHONY : Acta.cpp.i
+
+Acta.s: Acta.cpp.s
+
+.PHONY : Acta.s
+
+# target to generate assembly for a file
+Acta.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Acta.cpp.s
+.PHONY : Acta.cpp.s
+
+Asistente.obj: Asistente.cpp.obj
+
+.PHONY : Asistente.obj
+
+# target to build an object file
+Asistente.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Asistente.cpp.obj
+.PHONY : Asistente.cpp.obj
+
+Asistente.i: Asistente.cpp.i
+
+.PHONY : Asistente.i
+
+# target to preprocess a source file
+Asistente.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Asistente.cpp.i
+.PHONY : Asistente.cpp.i
+
+Asistente.s: Asistente.cpp.s
+
+.PHONY : Asistente.s
+
+# target to generate assembly for a file
+Asistente.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Asistente.cpp.s
+.PHONY : Asistente.cpp.s
+
+Director.obj: Director.cpp.obj
+
+.PHONY : Director.obj
+
+# target to build an object file
+Director.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Director.cpp.obj
+.PHONY : Director.cpp.obj
+
+Director.i: Director.cpp.i
+
+.PHONY : Director.i
+
+# target to preprocess a source file
+Director.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Director.cpp.i
+.PHONY : Director.cpp.i
+
+Director.s: Director.cpp.s
+
+.PHONY : Director.s
+
+# target to generate assembly for a file
+Director.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Director.cpp.s
+.PHONY : Director.cpp.s
+
+Estudiante.obj: Estudiante.cpp.obj
+
+.PHONY : Estudiante.obj
+
+# target to build an object file
+Estudiante.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Estudiante.cpp.obj
+.PHONY : Estudiante.cpp.obj
+
+Estudiante.i: Estudiante.cpp.i
+
+.PHONY : Estudiante.i
+
+# target to preprocess a source file
+Estudiante.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Estudiante.cpp.i
+.PHONY : Estudiante.cpp.i
+
+Estudiante.s: Estudiante.cpp.s
+
+.PHONY : Estudiante.s
+
+# target to generate assembly for a file
+Estudiante.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Estudiante.cpp.s
+.PHONY : Estudiante.cpp.s
+
+Jurado.obj: Jurado.cpp.obj
+
+.PHONY : Jurado.obj
+
+# target to build an object file
+Jurado.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Jurado.cpp.obj
+.PHONY : Jurado.cpp.obj
+
+Jurado.i: Jurado.cpp.i
+
+.PHONY : Jurado.i
+
+# target to preprocess a source file
+Jurado.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Jurado.cpp.i
+.PHONY : Jurado.cpp.i
+
+Jurado.s: Jurado.cpp.s
+
+.PHONY : Jurado.s
+
+# target to generate assembly for a file
+Jurado.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Jurado.cpp.s
+.PHONY : Jurado.cpp.s
+
+Persona.obj: Persona.cpp.obj
+
+.PHONY : Persona.obj
+
+# target to build an object file
+Persona.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Persona.cpp.obj
+.PHONY : Persona.cpp.obj
+
+Persona.i: Persona.cpp.i
+
+.PHONY : Persona.i
+
+# target to preprocess a source file
+Persona.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Persona.cpp.i
+.PHONY : Persona.cpp.i
+
+Persona.s: Persona.cpp.s
+
+.PHONY : Persona.s
+
+# target to generate assembly for a file
+Persona.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/Persona.cpp.s
+.PHONY : Persona.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -177,6 +339,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... POSGSOFT
+	@echo ... Acta.obj
+	@echo ... Acta.i
+	@echo ... Acta.s
+	@echo ... Asistente.obj
+	@echo ... Asistente.i
+	@echo ... Asistente.s
+	@echo ... Director.obj
+	@echo ... Director.i
+	@echo ... Director.s
+	@echo ... Estudiante.obj
+	@echo ... Estudiante.i
+	@echo ... Estudiante.s
+	@echo ... Jurado.obj
+	@echo ... Jurado.i
+	@echo ... Jurado.s
+	@echo ... Persona.obj
+	@echo ... Persona.i
+	@echo ... Persona.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

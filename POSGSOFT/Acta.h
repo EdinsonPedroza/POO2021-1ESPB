@@ -51,5 +51,6 @@ public:
     void mostrarComentariosAdicionales();
     void mostrarTrabajosAplicados();
     void mostrarTrabajosdeInvestigacion();
+    void mostrartrabajosPorJurado();
 };
 #endif //POSGSOFT_ACTA_H

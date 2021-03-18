@@ -8,6 +8,7 @@
 #include<vector>
 #include<fstream>
 #include<stdlib.h>
+
 class Estudiante: public Persona{
 private:
     vector <string> vectorNombreEstudiante;

@@ -15,7 +15,7 @@ private:
 public:
     Jurado();
     Jurado(string, int);
-    void setJurado();
+    void getJurado(const string&);
     void calificarCriterios();
     void ingresarComentariosAdicionales();
 };

@@ -89,17 +89,15 @@ void Acta::agregarEstudiante() {
 
     if(this->tipoTrabajo=="Aplicado" || this->tipoTrabajo=="aplicado" || this->tipoTrabajo=="APLICADO" ||
             this->tipoTrabajo=="1"){
-        this->tipoTrabajoAplicado.emplace_back(this->tipoTrabajo);
-        cout<<"ajjjjjjjj"<<this->tipoTrabajo<<this->tipoTrabajoAplicado[0]<<endl;
+        this->tipoTrabajoAplicado.push_back(workName);
     }
     else if(this->tipoTrabajo=="Investigacion" || this->tipoTrabajo=="investigacion" || this->tipoTrabajo=="INVESTIGACION" ||
             this->tipoTrabajo=="2"){
-        this->tipoTrabajoInvestigacion.emplace_back(this->tipoTrabajo);
+        this->tipoTrabajoInvestigacion.push_back(workName);
     }
-    Acta acta;
-    acta.mostrarTrabajosAplicados();
-    acta.mostrarTrabajosdeInvestigacion();
-    cout<<"Hola";
+    mostrarTrabajosAplicados();
+    mostrarTrabajosdeInvestigacion();
+
     Estudiante estudiante(name,code,this->tipoTrabajo, workName, descripcion);
     Persona persona(name,code);
 
@@ -218,11 +216,15 @@ void Acta::mostrarComentarios() {
 
 void Acta::mostrarTrabajosAplicados() {
     int i;
-    cout<<this->tipoTrabajoAplicado[0]<<"llegue";
     for(i=0;i<this->tipoTrabajoAplicado.size();i++){
-        cout<<"a"<<this->tipoTrabajoAplicado[i]<<"A"<<endl;
+        cout<<this->tipoTrabajoAplicado[i]<<endl;
     }
 }
 
 void Acta::mostrarTrabajosdeInvestigacion() {
+    int i;
+    for(i=0;i<this->tipoTrabajoInvestigacion.size();i++){
+        cout<<this->tipoTrabajoInvestigacion[i]<<endl;
+    }
 }
+

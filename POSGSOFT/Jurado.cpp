@@ -1,17 +1,12 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include<fstream>
-#include<stdlib.h>
 #include "Persona.h"
 #include "Acta.h"
-#include "Director.h"
 #include "Jurado.h"
-#include "Estudiante.h"
 using namespace std;
 
 Jurado::Jurado() {
-
 }
 Jurado::Jurado(string nombre, int id): Persona(nombre,id) {
     this->vectorNombreJurado.push_back(nombre);
@@ -90,4 +85,8 @@ void Jurado::ingresarComentariosAdicionales() {
     Acta acta;
     acta.recibirComentariosAdicionales(comentarioJ1,comentarioJ2);
     acta.mostrarComentariosAdicionales();
+}
+
+void Jurado::getJurado(const string& nombreJurado) {
+
 }
