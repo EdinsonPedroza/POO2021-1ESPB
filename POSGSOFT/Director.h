@@ -1,20 +1,16 @@
 #ifndef POSGSOFT_DIRECTOR_H
 #define POSGSOFT_DIRECTOR_H
 #include<iostream>
-#include<list>
-#include<iomanip>
-#include<string>
-#include <utility>
 #include<vector>
-#include<fstream>
-#include<stdlib.h>
 
 class Director: public Persona{
 private:
-    vector <string> vectorNombreDirector;
-    vector <int> vectorIdDirector;
+    int cantTrabajos=0;
+    vector<int>vectorCantTrabajos;
+    vector<string>nameDir;
 public:
     Director();
-    Director(string, int);
+    Director(string, string);
+    void mostrarCantTrabajos();
 };
 #endif //POSGSOFT_DIRECTOR_H

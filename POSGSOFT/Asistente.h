@@ -5,12 +5,13 @@
 
 class Asistente: public Persona{
     private:
-        vector<Acta>acta;
+        vector<Acta>actas;
         vector<string>estudiante;
         vector<string>jurado;
         vector<string>director;
-public:
-    Asistente();
-    void crearNuevaActa();
+    public:
+        Asistente();
+        void crearNuevaActa();
+        void mostrarActa();
 };
 #endif //POSGSOFT_ASISTENTE_H

@@ -4,11 +4,13 @@
 #include "Persona.h"
 #include "Acta.h"
 #include "Jurado.h"
+#include "Criterios.h"
+
 using namespace std;
 
 Jurado::Jurado() {
 }
-Jurado::Jurado(string nombre, int id): Persona(nombre,id) {
+Jurado::Jurado(string nombre, string id): Persona(nombre,id) {
     this->vectorNombreJurado.push_back(nombre);
     this->vectorIdJurado.push_back(id);
 }
@@ -41,7 +43,7 @@ void Jurado::calificarCriterios() {
         }
     }
 
-    Acta mandarCriterios;
+    Criterios mandarCriterios;
     mandarCriterios.recibirCriterios(vectorCriterioJ1, vectorCriterioJ2, vectorComentJ1, vectorComentJ2);
     mandarCriterios.mostrarCalificacionesCriterios();
     mandarCriterios.crearPonderado();
@@ -49,6 +51,8 @@ void Jurado::calificarCriterios() {
     mandarCriterios.mostrarComentarios();
     Jurado jurado;
     jurado.ingresarComentariosAdicionales();
+    Acta acta;
+    acta.definirEstadoTrabajo();
 
 }
 
@@ -87,6 +91,4 @@ void Jurado::ingresarComentariosAdicionales() {
     acta.mostrarComentariosAdicionales();
 }
 
-void Jurado::getJurado(const string& nombreJurado) {
 
-}

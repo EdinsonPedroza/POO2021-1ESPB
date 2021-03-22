@@ -1,21 +1,14 @@
 #ifndef POSGSOFT_JURADO_H
 #define POSGSOFT_JURADO_H
 #include<iostream>
-#include<list>
-#include<iomanip>
-#include<string>
-#include <utility>
-#include<vector>
-#include<fstream>
-#include<stdlib.h>
+
 class Jurado: public Persona{
 private:
     vector <string> vectorNombreJurado;
-    vector <int> vectorIdJurado;
+    vector <string> vectorIdJurado;
 public:
     Jurado();
-    Jurado(string, int);
-    void getJurado(const string&);
+    Jurado(string, string);
     void calificarCriterios();
     void ingresarComentariosAdicionales();
 };

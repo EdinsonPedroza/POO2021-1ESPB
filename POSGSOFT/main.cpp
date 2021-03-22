@@ -42,9 +42,9 @@ void leer() {
 int main(){
     //escribir();
     //leer();
+
     Asistente asistente;
     asistente.crearNuevaActa();
-
     cout<<"ya";
     system("pause");
     return 0;
