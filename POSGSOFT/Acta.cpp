@@ -1,10 +1,4 @@
-#include<iostream>
-#include "Persona.h"
 #include "Acta.h"
-#include "Director.h"
-#include "Jurado.h"
-
-using namespace std;
 
 Acta::Acta(){}
 
@@ -14,9 +8,21 @@ void Acta::crearDatos(){
     cin>>this->numeroActa;
     crearFecha();
     agregarPersonal();
+    asignarCriterios();
     Jurado jurado;
-    jurado.calificarCriterios();
-    cout<<"Acta #"<<this->numeroActa<< " creada ";
+    jurado.calificarCriterios(this->criterios);
+    if (this->promedio>3.5){
+        this->estadotrabajo= APROBADO;
+        this->trabajosAprobados.push_back(this->workName);
+    }else{
+        this->estadotrabajo= REPROBADO;
+        this->trabajosAprobados.push_back(this->workName);
+    }
+    this->estado = EstadoActa::CERRADA;
+    cout<<this->promedio<<endl;
+    cout<<this->estadotrabajo<<endl;
+    cout<<this->trabajosAprobados[0]<<endl;
+    enviarDatos();
 }
 
 void Acta::agregarPersonal(){
@@ -57,15 +63,15 @@ void Acta::agregarPersonal(){
 
 void Acta::agregarEstudiante() {
     int code;
-    string estudiante,descripcion;
+    string descripcion;
     cin.ignore();
     cout<<"Ingrese su nombre: ";
-    getline(cin,estudiante);
+    getline(cin,this->nombreEstudiante);
     cout<<"Ingrese su ID: ";
     cin>>code;
     cin.ignore();
     cout<<"Ingrese su tipo de trabajo:"<<endl;
-    cout<<"1.Aplicado\n2.Investigacion:"<<endl;
+    cout<<"0.Aplicado\n1.Investigacion:"<<endl;
     getline(cin,this->tipoTrabajo);
     cout<<"Ingrese el nombre de su trabajo:"<<endl;
     getline(cin,this->workName);
@@ -75,16 +81,15 @@ void Acta::agregarEstudiante() {
 
 
     if(this->tipoTrabajo=="Aplicado" || this->tipoTrabajo=="aplicado" || this->tipoTrabajo=="APLICADO" ||
-            this->tipoTrabajo=="1"){
+            this->tipoTrabajo=="0"){
         this->tipoTrabajoAplicado.push_back(this->workName);
     }
     else if(this->tipoTrabajo=="Investigacion" || this->tipoTrabajo=="investigacion" || this->tipoTrabajo=="INVESTIGACION" ||
-            this->tipoTrabajo=="2"){
+            this->tipoTrabajo=="1"){
         this->tipoTrabajoInvestigacion.push_back(this->workName);
     }
     mostrarTrabajosAplicados();
     mostrarTrabajosdeInvestigacion();
-
 }
 
 void Acta::agregarJurado() {
@@ -102,7 +107,6 @@ void Acta::agregarJurado() {
 
 void Acta::agregarDirector() {
     string name,code;
-    int i;
     cin.ignore();
     cout<<"Ingrese su nombre: ";
     getline(cin,name);
@@ -149,20 +153,12 @@ void Acta::crearFecha() {
     cout<<this->fecha;
 }
 
-void Acta::definirEstadoTrabajo() {
-    if (this->promedio[0]>3.5){
-        this->estadotrabajo= APROBADO;
-        this->trabajosAprobados.push_back(this->workName);
-    }else{
-        this->estadotrabajo= REPROBADO;
-        this->trabajosAprobados.push_back(this->workName);
-    }
-    this->estado = EstadoActa::CERRADA;
-}
+
 
 void Acta::mostrartrabajosDirigidos() {
     int i,  cont;
     string idDir;
+
     cout<<"Ingrese el ID del director: ";
     getline(cin,idDir);
     for (i=0;i<this->listaID.size();i++){
@@ -195,4 +191,50 @@ void Acta::mostrarListaRechazados() {
     for(i=0;i<this->trabajosRechazados.size();i++){
         cout<<this->trabajosRechazados[i]<<endl;
     }
+}
+
+void Acta::recibirPromedio(double promedio) {
+    this->promedio=promedio;
+}
+
+
+void Acta::asignarCriterios() {
+    this->criterios.emplace_back("1. Desarrollo y profundidad en el tratamiento del tema:\n");
+    this->criterios.emplace_back("2. Desafio academico y cientifico del tema:\n");
+    this->criterios.emplace_back("3. Cumplimiento de los objetivos propuestos:\n");
+    this->criterios.emplace_back("4. Creatividad e innovacion de las soluciones y desarrollos propuestos:\n");
+    this->criterios.emplace_back("5. Validez de los resultados y conclusiones:\n");
+    this->criterios.emplace_back("6. Manejo y procesamiento de la informacion y bibliografia:\n");
+    this->criterios.emplace_back("7. Calidad y presentacion del documento escrito:\n");
+    this->criterios.emplace_back("8. Presentación oral:\n");
+}
+
+void Acta::enviarDatos() {
+    if (this->tipoTrabajo=="1"){
+        this->tipoTrabajo="INVESTIGACION";
+    }else{
+        this->tipoTrabajo="APLICADO";
+    }
+    cout<<calificacionesJ1[0]<<endl;
+    cout<<"LLEGUEEEEEEEEE\n";
+    cout<<this->nombreEstudiante<< this->nombreDir<< this->listaJurados[0]<< this->numeroActa
+    <<this->idEstudiante<< this->idDirector<< this->listaID[0]<<
+            this->estadotrabajo<< this->criterios[0]<< this->calificacionesJ1[0]<< this->calificacionesJ2[0]<<
+            this->comentariosJ1[0]<<this->comentariosJ2[0]<< this->comentariosAdicionalesJ1<<
+            this->comentariosAdicionalesJ2<< this->promedio<< this->fecha<< this->workName<< this->tipoTrabajo;
+    Asistente asistente;
+    cout<<"LLEGUEEEEEEEEE\n";
+    asistente.recibirDatos(this->nombreEstudiante, this->nombreDir, this->listaJurados, this->numeroActa,
+            this->idEstudiante, this->idDirector, this->listaID,
+            this->estadotrabajo, this->criterios, this->calificacionesJ1, this->calificacionesJ2,
+            this->comentariosJ1,this->comentariosJ2, this->comentariosAdicionalesJ1,
+            this->comentariosAdicionalesJ2, this->promedio, this->fecha, this->workName, this->tipoTrabajo);
+}
+
+void Acta::recibirCalificaciones(vector<double>calificacionesJ1, vector<double>calificacionesJ2,
+                                 vector<string>comentariosJ1, vector<string>comentariosJ2) {
+    this->calificacionesJ1=calificacionesJ1;
+    this->calificacionesJ2=calificacionesJ2;
+    this->comentariosJ1=comentariosJ1;
+    this->comentariosJ2=comentariosJ2;
 }

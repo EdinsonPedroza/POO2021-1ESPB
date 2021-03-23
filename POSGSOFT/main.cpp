@@ -1,5 +1,8 @@
 #include<iostream>
 #include "Asistente.h"
+
+void crearMenu();
+
 using namespace std;
 
 /*void escribir(){
@@ -42,10 +45,40 @@ void leer() {
 int main(){
     //escribir();
     //leer();
+    crearMenu();
 
-    Asistente asistente;
-    asistente.crearNuevaActa();
-    cout<<"ya";
     system("pause");
     return 0;
+}
+
+void crearMenu() {
+    int opc;
+    Asistente asistente;
+    do{
+        cout<<"1. Crear acta\n"
+              "2. Ver trabajos aplicados\n"
+              "3. Ver trabajos de investgacion\n"
+              "4. Consultar cuantos trabajos de grado ha dirigido un profesor. \n"
+              "5. Consultar de cuales trabajos de grado ha sido jurado una persona\n"
+              "6. Ver la lista de todos los jurados que han participado en las actas registradas\n"
+              "7. Consultar las actas de los trabajos de grado aprobados y rechazados.  \n"
+              "8. Consultar la lista de criterios de evaluacion\n"
+              "0. Salir\n"
+              "Que accion desea realizar?: ";
+        cin>>opc;
+        switch (opc) {
+            case 1:
+                asistente.crearNuevaActa();
+                break;
+            case 2:
+                asistente.mostrarActa();
+                break;
+           // case 3: ;
+           // case 4: ;
+           // case 5: ;
+           // case 6: ;
+           // case 7: ;
+           // case 8: ;
+        }
+    }while(opc!=0);
 }

@@ -52,10 +52,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\portatil\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6085.16\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 211.6556.10\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = C:\Users\portatil\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6085.16\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 211.6556.10\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -88,19 +88,124 @@ CMakeFiles/POSGSOFT.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGSOFT.dir/main.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\main.cpp -o CMakeFiles\POSGSOFT.dir\main.cpp.s
 
+CMakeFiles/POSGSOFT.dir/Acta.cpp.obj: CMakeFiles/POSGSOFT.dir/flags.make
+CMakeFiles/POSGSOFT.dir/Acta.cpp.obj: ../Acta.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/POSGSOFT.dir/Acta.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POSGSOFT.dir\Acta.cpp.obj -c C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Acta.cpp
+
+CMakeFiles/POSGSOFT.dir/Acta.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGSOFT.dir/Acta.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Acta.cpp > CMakeFiles\POSGSOFT.dir\Acta.cpp.i
+
+CMakeFiles/POSGSOFT.dir/Acta.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGSOFT.dir/Acta.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Acta.cpp -o CMakeFiles\POSGSOFT.dir\Acta.cpp.s
+
+CMakeFiles/POSGSOFT.dir/Persona.cpp.obj: CMakeFiles/POSGSOFT.dir/flags.make
+CMakeFiles/POSGSOFT.dir/Persona.cpp.obj: ../Persona.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/POSGSOFT.dir/Persona.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POSGSOFT.dir\Persona.cpp.obj -c C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Persona.cpp
+
+CMakeFiles/POSGSOFT.dir/Persona.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGSOFT.dir/Persona.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Persona.cpp > CMakeFiles\POSGSOFT.dir\Persona.cpp.i
+
+CMakeFiles/POSGSOFT.dir/Persona.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGSOFT.dir/Persona.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Persona.cpp -o CMakeFiles\POSGSOFT.dir\Persona.cpp.s
+
+CMakeFiles/POSGSOFT.dir/Director.cpp.obj: CMakeFiles/POSGSOFT.dir/flags.make
+CMakeFiles/POSGSOFT.dir/Director.cpp.obj: ../Director.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/POSGSOFT.dir/Director.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POSGSOFT.dir\Director.cpp.obj -c C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Director.cpp
+
+CMakeFiles/POSGSOFT.dir/Director.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGSOFT.dir/Director.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Director.cpp > CMakeFiles\POSGSOFT.dir\Director.cpp.i
+
+CMakeFiles/POSGSOFT.dir/Director.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGSOFT.dir/Director.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Director.cpp -o CMakeFiles\POSGSOFT.dir\Director.cpp.s
+
+CMakeFiles/POSGSOFT.dir/Jurado.cpp.obj: CMakeFiles/POSGSOFT.dir/flags.make
+CMakeFiles/POSGSOFT.dir/Jurado.cpp.obj: ../Jurado.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/POSGSOFT.dir/Jurado.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POSGSOFT.dir\Jurado.cpp.obj -c C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Jurado.cpp
+
+CMakeFiles/POSGSOFT.dir/Jurado.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGSOFT.dir/Jurado.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Jurado.cpp > CMakeFiles\POSGSOFT.dir\Jurado.cpp.i
+
+CMakeFiles/POSGSOFT.dir/Jurado.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGSOFT.dir/Jurado.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Jurado.cpp -o CMakeFiles\POSGSOFT.dir\Jurado.cpp.s
+
+CMakeFiles/POSGSOFT.dir/Estudiante.cpp.obj: CMakeFiles/POSGSOFT.dir/flags.make
+CMakeFiles/POSGSOFT.dir/Estudiante.cpp.obj: ../Estudiante.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/POSGSOFT.dir/Estudiante.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POSGSOFT.dir\Estudiante.cpp.obj -c C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Estudiante.cpp
+
+CMakeFiles/POSGSOFT.dir/Estudiante.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGSOFT.dir/Estudiante.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Estudiante.cpp > CMakeFiles\POSGSOFT.dir\Estudiante.cpp.i
+
+CMakeFiles/POSGSOFT.dir/Estudiante.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGSOFT.dir/Estudiante.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Estudiante.cpp -o CMakeFiles\POSGSOFT.dir\Estudiante.cpp.s
+
+CMakeFiles/POSGSOFT.dir/Asistente.cpp.obj: CMakeFiles/POSGSOFT.dir/flags.make
+CMakeFiles/POSGSOFT.dir/Asistente.cpp.obj: ../Asistente.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/POSGSOFT.dir/Asistente.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POSGSOFT.dir\Asistente.cpp.obj -c C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Asistente.cpp
+
+CMakeFiles/POSGSOFT.dir/Asistente.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGSOFT.dir/Asistente.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Asistente.cpp > CMakeFiles\POSGSOFT.dir\Asistente.cpp.i
+
+CMakeFiles/POSGSOFT.dir/Asistente.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGSOFT.dir/Asistente.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Asistente.cpp -o CMakeFiles\POSGSOFT.dir\Asistente.cpp.s
+
+CMakeFiles/POSGSOFT.dir/Criterio.cpp.obj: CMakeFiles/POSGSOFT.dir/flags.make
+CMakeFiles/POSGSOFT.dir/Criterio.cpp.obj: ../Criterio.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/POSGSOFT.dir/Criterio.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\POSGSOFT.dir\Criterio.cpp.obj -c C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Criterio.cpp
+
+CMakeFiles/POSGSOFT.dir/Criterio.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/POSGSOFT.dir/Criterio.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Criterio.cpp > CMakeFiles\POSGSOFT.dir\Criterio.cpp.i
+
+CMakeFiles/POSGSOFT.dir/Criterio.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/POSGSOFT.dir/Criterio.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\Criterio.cpp -o CMakeFiles\POSGSOFT.dir\Criterio.cpp.s
+
 # Object files for target POSGSOFT
 POSGSOFT_OBJECTS = \
-"CMakeFiles/POSGSOFT.dir/main.cpp.obj"
+"CMakeFiles/POSGSOFT.dir/main.cpp.obj" \
+"CMakeFiles/POSGSOFT.dir/Acta.cpp.obj" \
+"CMakeFiles/POSGSOFT.dir/Persona.cpp.obj" \
+"CMakeFiles/POSGSOFT.dir/Director.cpp.obj" \
+"CMakeFiles/POSGSOFT.dir/Jurado.cpp.obj" \
+"CMakeFiles/POSGSOFT.dir/Estudiante.cpp.obj" \
+"CMakeFiles/POSGSOFT.dir/Asistente.cpp.obj" \
+"CMakeFiles/POSGSOFT.dir/Criterio.cpp.obj"
 
 # External object files for target POSGSOFT
 POSGSOFT_EXTERNAL_OBJECTS =
 
 POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/main.cpp.obj
+POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/Acta.cpp.obj
+POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/Persona.cpp.obj
+POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/Director.cpp.obj
+POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/Jurado.cpp.obj
+POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/Estudiante.cpp.obj
+POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/Asistente.cpp.obj
+POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/Criterio.cpp.obj
 POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/build.make
 POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/linklibs.rsp
 POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/objects1.rsp
 POSGSOFT.exe: CMakeFiles/POSGSOFT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable POSGSOFT.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable POSGSOFT.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\POSGSOFT.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

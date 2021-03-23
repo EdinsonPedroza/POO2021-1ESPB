@@ -1,12 +1,4 @@
-#include<iostream>
-#include<string>
-#include<vector>
-#include "Persona.h"
-#include "Acta.h"
 #include "Jurado.h"
-#include "Criterios.h"
-
-using namespace std;
 
 Jurado::Jurado() {
 }
@@ -14,45 +6,40 @@ Jurado::Jurado(string nombre, string id): Persona(nombre,id) {
     this->vectorNombreJurado.push_back(nombre);
     this->vectorIdJurado.push_back(id);
 }
-void Jurado::calificarCriterios() {
-    int i, nota;
-    vector<double> vectorCriterioJ1, vectorCriterioJ2;
-    vector<string> vectorComentJ1, vectorComentJ2;
-    string comentJ1,comentJ2;
-
+void Jurado::calificarCriterios(vector<string> criterios) {
+    int i;
     for (i=0;i<16;i++){
         if(i<8){
+            cout<<criterios[i];
             cout<<"Jurado 1:";
             cout<<"Ingrese la nota del criterio #"<<i+1<<": ";
-            cin>>nota;
-            vectorCriterioJ1.push_back(nota);
+            cin>>this->nota;
+            this->vectorCriterioJ1.push_back(this->nota);
             cin.ignore();
             cout<<"Ingrese su comentario del criterio #"<<i+1<<":\n";
-            getline(cin, comentJ1);
-            vectorComentJ1.push_back(comentJ1);
+            getline(cin, this->comentJ1);
+            this->vectorComentJ1.push_back(this->comentJ1);
 
         }else{
+            cout<<criterios[i-8];
             cout<<"Jurado 2:";
             cout<<"Ingrese la nota del criterio #"<<i-7<<": ";
-            cin>>nota;
-            vectorCriterioJ2.push_back(nota);
+            cin>>this->nota;
+            this->vectorCriterioJ2.push_back(this->nota);
             cin.ignore();
             cout<<"Ingrese su comentario del criterio # "<<i-7<<":\n";
-            getline(cin,comentJ2);
-            vectorComentJ2.push_back(comentJ2);
+            getline(cin,this->comentJ2);
+            this->vectorComentJ2.push_back(this->comentJ2);
         }
     }
-
-    Criterios mandarCriterios;
-    mandarCriterios.recibirCriterios(vectorCriterioJ1, vectorCriterioJ2, vectorComentJ1, vectorComentJ2);
+    Criterio mandarCriterios;
+    mandarCriterios.recibirCriterios(this->vectorCriterioJ1, this->vectorCriterioJ2,
+                                     this->vectorComentJ1, this->vectorComentJ2);
     mandarCriterios.mostrarCalificacionesCriterios();
     mandarCriterios.crearPonderado();
     mandarCriterios.generarEstadoActa();
     mandarCriterios.mostrarComentarios();
-    Jurado jurado;
-    jurado.ingresarComentariosAdicionales();
-    Acta acta;
-    acta.definirEstadoTrabajo();
+    ingresarComentariosAdicionales();
 
 }
 
@@ -71,7 +58,7 @@ void Jurado::ingresarComentariosAdicionales() {
                 getline(cin, comentarioJ1);
 
             } else {
-                cout<<"N/A"<<endl;
+                comentarioJ1="N/A";
             }
         case 1:
             cout << "Jurado 2" << endl;
@@ -83,12 +70,12 @@ void Jurado::ingresarComentariosAdicionales() {
                 cout << "Ingrese su comentario adicional:\n";
                 getline(cin, comentarioJ2);
             }else{
-                cout<<"N/A"<<endl;
+                comentarioJ2="N/A";
             }
     }
     Acta acta;
+    acta.recibirCalificaciones(this->vectorCriterioJ1, this->vectorCriterioJ2,
+                               this->vectorComentJ1, this->vectorComentJ2);
     acta.recibirComentariosAdicionales(comentarioJ1,comentarioJ2);
     acta.mostrarComentariosAdicionales();
 }
-
-

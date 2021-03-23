@@ -4,6 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Acta.cpp" "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/cmake-build-debug/CMakeFiles/POSGSOFT.dir/Acta.cpp.obj"
+  "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Asistente.cpp" "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/cmake-build-debug/CMakeFiles/POSGSOFT.dir/Asistente.cpp.obj"
+  "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Criterio.cpp" "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/cmake-build-debug/CMakeFiles/POSGSOFT.dir/Criterio.cpp.obj"
+  "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Director.cpp" "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/cmake-build-debug/CMakeFiles/POSGSOFT.dir/Director.cpp.obj"
+  "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Estudiante.cpp" "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/cmake-build-debug/CMakeFiles/POSGSOFT.dir/Estudiante.cpp.obj"
+  "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Jurado.cpp" "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/cmake-build-debug/CMakeFiles/POSGSOFT.dir/Jurado.cpp.obj"
+  "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Persona.cpp" "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/cmake-build-debug/CMakeFiles/POSGSOFT.dir/Persona.cpp.obj"
   "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/main.cpp" "C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/cmake-build-debug/CMakeFiles/POSGSOFT.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

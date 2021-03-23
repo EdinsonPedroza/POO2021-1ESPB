@@ -80,6 +80,48 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Acta.cpp">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Acta.h">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Asistente.cpp">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Asistente.h">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Criterio.cpp">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Criterio.h">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Director.cpp">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Director.h">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Estudiante.cpp">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Estudiante.h">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Jurado.cpp">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Jurado.h">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Persona.cpp">
+			<Option target="POSGSOFT"/>
+		</Unit>
+		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/Persona.h">
+			<Option target="POSGSOFT"/>
+		</Unit>
 		<Unit filename="C:/Users/portatil/Desktop/POSGSOFT/POSGSOFT/main.cpp">
 			<Option target="POSGSOFT"/>
 		</Unit>

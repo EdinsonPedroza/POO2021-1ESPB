@@ -53,10 +53,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\portatil\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6085.16\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 211.6556.10\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = C:\Users\portatil\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.6085.16\bin\cmake\win\bin\cmake.exe -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 211.6556.10\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -92,12 +92,12 @@ clean: CMakeFiles/POSGSOFT.dir/clean
 CMakeFiles/POSGSOFT.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\POSGSOFT.dir\build.make CMakeFiles/POSGSOFT.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target POSGSOFT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target POSGSOFT"
 .PHONY : CMakeFiles/POSGSOFT.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/POSGSOFT.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/POSGSOFT.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\portatil\Desktop\POSGSOFT\POSGSOFT\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/POSGSOFT.dir/rule
